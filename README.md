@@ -66,6 +66,14 @@ The bug reports are:
 
 5. Clicking on a `smartcase` button is visible in the `app`, but holding down the button and releasing later is not visible. Feels like a bug, but maybe this is by design?
 
+Yes, I think it is by design.
+
+This behavior is consistent with the current protocol and implementation.
+The protocol only defines ButtonTap (0x00), and the iOS app sends this event through onTapGesture. Long-press and release events are neither defined in the protocol nor implemented.
+
+I think No code change is required for the current specification.
+Supporting these interactions would require a protocol extension and corresponding changes to the iOS app and Mac-side event handling.
+
 6. A new customer was complaining that the properties of the *SmartCaseButton* class in `smartcasekit` are not documented at all, so they don't know how to use them from their app.
 
 ### How To Deliver The Solutions
