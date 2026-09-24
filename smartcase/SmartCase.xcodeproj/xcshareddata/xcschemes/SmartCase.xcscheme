@@ -17,6 +17,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "70F2F55B2C172E7C00401D23"
                BuildableName = "SmartCase.app"
+               BlueprintName = "SmartCase"
                ReferencedContainer = "container:SmartCase.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,6 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "70F2F55B2C172E7C00401D23"
             BuildableName = "SmartCase.app"
+            BlueprintName = "SmartCase"
             ReferencedContainer = "container:SmartCase.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,6 +64,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "70F2F55B2C172E7C00401D23"
             BuildableName = "SmartCase.app"
+            BlueprintName = "SmartCase"
             ReferencedContainer = "container:SmartCase.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

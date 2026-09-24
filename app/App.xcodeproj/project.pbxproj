@@ -390,7 +390,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
-				DEVELOPMENT_TEAM = AB3DZ8D7X2;
+				DEVELOPMENT_TEAM = 8B2FWKNC2W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -420,7 +420,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
-				DEVELOPMENT_TEAM = AB3DZ8D7X2;
+				DEVELOPMENT_TEAM = 8B2FWKNC2W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -473,7 +473,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		70B40DE72C19F78100A4C7D3 /* XCRemoteSwiftPackageReference "SVGView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/SVGView.git";
+			repositoryURL = "git@github.com:exyte/SVGView.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.6;

@@ -17,6 +17,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "SmartCaseKit"
                BuildableName = "SmartCaseKit"
+               BlueprintName = "SmartCaseKit"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -52,6 +53,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "SmartCaseKit"
             BuildableName = "SmartCaseKit"
+            BlueprintName = "SmartCaseKit"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>
