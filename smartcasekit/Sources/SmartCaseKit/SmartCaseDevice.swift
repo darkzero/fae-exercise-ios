@@ -60,7 +60,9 @@ import SwiftUI
         var buttons: [SmartCaseButton] = []
         let buttonCount = Int(response.payload[1])
         for buttonIndex in (0 ..< buttonCount) {
-            let imageIndex = response.payload[2 + buttonIndex * 4 + 1]
+            // Each button occupies four bytes: image index, red, green, and blue.
+            // Skip the status byte and button count to read the image index.
+            let imageIndex = response.payload[2 + buttonIndex * 4] // fix bug 3, index wrong
             let red = response.payload[2 + buttonIndex * 4 + 1]
             let green = response.payload[2 + buttonIndex * 4 + 2]
             let blue = response.payload[2 + buttonIndex * 4 + 3]
