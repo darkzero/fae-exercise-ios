@@ -103,6 +103,18 @@ import SwiftUI
     }
 
     // MARK: - CBPeripheralDelegate
+    public func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
+        guard invalidatedServices.contains(where: {
+            $0.uuid == SmartCaseProtocol.serviceUUID
+        }) else {
+            return
+        }
+        
+        Log("SmartCase service invalidated")
+
+        manager?.cancelPeripheralConnection(peripheral)
+        peripheralDidDisconnect()
+    }
 
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: (any Error)?) {
         if let error {
@@ -245,5 +257,17 @@ import SwiftUI
         isConnected = false
         disconnectContinuation?.resume()
         disconnectContinuation = nil
+        
+        failConnect(with: SmartCaseError.notConnected)
+
+        let requests = pendingRequests
+        pendingRequests.removeAll()
+        for handler in requests.values {
+            handler(.failure(SmartCaseError.notConnected))
+        }
+
+        let continuation = disconnectContinuation
+        disconnectContinuation = nil
+        continuation?.resume()
     }
 }
