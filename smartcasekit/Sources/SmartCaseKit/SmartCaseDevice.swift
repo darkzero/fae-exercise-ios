@@ -103,6 +103,7 @@ import SwiftUI
     }
 
     // MARK: - CBPeripheralDelegate
+    // watch smartcase invalid
     public func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
         guard invalidatedServices.contains(where: {
             $0.uuid == SmartCaseProtocol.serviceUUID
@@ -258,14 +259,17 @@ import SwiftUI
         disconnectContinuation?.resume()
         disconnectContinuation = nil
         
+        // Clear the invalid characteristic to prevent subsequent requests from using it.
         failConnect(with: SmartCaseError.notConnected)
-
+        
+        // Fail pending requests so they don't wait indefinitely for a response.
         let requests = pendingRequests
         pendingRequests.removeAll()
         for handler in requests.values {
             handler(.failure(SmartCaseError.notConnected))
         }
-
+        
+        // Complete any pending connection or disconnection operations.
         let continuation = disconnectContinuation
         disconnectContinuation = nil
         continuation?.resume()
